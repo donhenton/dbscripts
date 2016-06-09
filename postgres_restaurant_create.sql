@@ -1,5 +1,6 @@
+--  when logged in as a super user;
 CREATE USER test WITH SUPERUSER UNENCRYPTED PASSWORD 'test';
-create database jdatabase owner test; when logged in as a super user;
+create database jdatabase owner test;
 use jdatabase;
 
 -- ------------------------------------------------------
