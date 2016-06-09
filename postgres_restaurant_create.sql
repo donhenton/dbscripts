@@ -1,3 +1,9 @@
+CREATE USER test WITH SUPERUSER UNENCRYPTED PASSWORD 'test';
+create database jdatabase owner test; when logged in as a super user;
+use jdatabase;
+
+-- ------------------------------------------------------
+
 -- postgres restaurant and reviews loading script
 DROP TABLE IF EXISTS restaurant CASCADE;
 CREATE TABLE restaurant (
