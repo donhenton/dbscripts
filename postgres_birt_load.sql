@@ -14,3 +14,32 @@ copy orderdetails from '/Users/dhenton/Downloads/ClassicModels-MySQL/datafiles/O
 copy orders from '/Users/dhenton/Downloads/ClassicModels-MySQL/datafiles/Orders.txt' ( FORMAT csv,NULL('NULL'),ENCODING('Windows-1252') )  ;
 copy payments from '/Users/dhenton/Downloads/ClassicModels-MySQL/datafiles/Payments.txt' ( FORMAT csv,NULL('NULL'),ENCODING('Windows-1252') )  ;
 copy products from '/Users/dhenton/Downloads/ClassicModels-MySQL/datafiles/Products.txt' ( FORMAT csv,NULL('NULL'),ENCODING('Windows-1252') )  ;
+
+/*
+
+Add the extra productlines table which is part of the diagram
+but not the official BIRT release
+
+
+*/
+
+DROP TABLE IF EXISTS  productlines;
+
+
+CREATE TABLE productlines(
+  id SERIAL PRIMARY KEY,
+  description CHAR(150) NOT NULL 
+);
+
+
+INSERT INTO productlines (description) VALUES ('Vintage Cars');
+INSERT INTO productlines (description) VALUES ('Planes');
+INSERT INTO productlines (description) VALUES ('Trains');
+INSERT INTO productlines (description) VALUES ('Classic Cars');
+INSERT INTO productlines (description) VALUES ('Motorcycles');
+INSERT INTO productlines (description) VALUES ('Ships');
+INSERT INTO productlines (description) VALUES ('Trucks and Buses');
+
+alter table products add column productline_id int not null default -1;
+update products set productline_id = productlines.id from productlines where productlines.description = products.productline;
+alter table products drop column productline;
