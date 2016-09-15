@@ -43,3 +43,9 @@ INSERT INTO productlines (description) VALUES ('Trucks and Buses');
 alter table products add column productline_id int not null default -1;
 update products set productline_id = productlines.id from productlines where productlines.description = products.productline;
 alter table products drop column productline;
+
+/* clean up keys */
+
+
+alter table offices alter column officecode type CHAR(10);
+alter table employees alter column officecode type CHAR(10);
