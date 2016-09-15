@@ -49,3 +49,9 @@ alter table products drop column productline;
 
 alter table offices alter column officecode type CHAR(10);
 alter table employees alter column officecode type CHAR(10);
+
+/* with the jpa I'm using cannot have composite keys */
+
+alter table orderDetails drop constraint orderdetails_pkey;
+-- alter table orderDetails drop column pid;
+alter table orderDetails add column pId SERIAL PRIMARY KEY;
