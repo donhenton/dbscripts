@@ -2,6 +2,11 @@
 This is script uses the exact files from the birt download.
 The location must be absolute, and this is run from psql client
 
+To get this to heroku, run these locally then run this heroku command
+
+heroku pg:push postgresql://localhost:5433/jdatabase DATABASE_URL --app donhenton-birt-service
+
+
 */
 
 
