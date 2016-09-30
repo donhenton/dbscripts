@@ -180,9 +180,9 @@ CREATE TABLE IF NOT EXISTS   application_groups  (
 	DROP TABLE IF EXISTS  group_assignments CASCADE;
 	CREATE TABLE IF NOT EXISTS  group_assignments (
 	   id  SERIAL PRIMARY KEY,
-	   user_id  char(20) NOT NULL,
+           user_id int DEFAULT 5, 
 	   group_id  int  NOT NULL ,
-	   CONSTRAINT group_user  UNIQUE  (  group_id ,  user_id ) 
+ 	   CONSTRAINT group_user  UNIQUE  (  group_id ,  user_id ) 
   
 	  ) ;
 	CREATE INDEX group_assignments_user_id_idx on group_assignments (user_id);
@@ -190,178 +190,179 @@ CREATE TABLE IF NOT EXISTS   application_groups  (
 	--
 	-- Dumping data for table  group_assignments
 	--
-	ALTER SEQUENCE group_assignments_id_seq RESTART WITH 125;
-	INSERT INTO  group_assignments ( id ,  user_id ,  group_id ) VALUES
-	(2, 'ale', 1),
-	(3, 'ayb', 1),
-	(4, 'blz', 1),
-	(5, 'cad', 1),
-	(19, 'clh', 1),
-	(6, 'djb', 1),
-	(7, 'djl', 1),
-	(18, 'dra', 1),
-	(8, 'eas', 1),
-	(9, 'jhm', 1),
-	(10, 'jms', 1),
-	(11, 'kjc', 1),
-	(12, 'lsb', 1),
-	(13, 'lxz', 1),
-	(14, 'lyb', 1),
-	(15, 'mab', 1),
-	(16, 'mkm', 1),
-	(17, 'oper', 1),
-	(1, 'sgrana', 1),
-	(20, 'slg', 1),
-	(23, 'jpd', 2),
-	(22, 'lmb', 2),
-	(21, 'lsb', 2),
-	(45, 'alb', 3),
-	(44, 'ale', 3),
-	(33, 'alm', 3),
-	(32, 'brw', 3),
-	(31, 'chs', 3),
-	(30, 'cjj', 3),
-	(29, 'cmb', 3),
-	(28, 'dcj', 3),
-	(27, 'dgk', 3),
-	(26, 'djb', 3),
-	(25, 'dxj', 3),
-	(43, 'gas', 3),
-	(126, 'gaw', 3),
-	(41, 'jpd', 3),
-	(40, 'jrk', 3),
-	(39, 'kag', 3),
-	(38, 'lmn', 3),
-	(37, 'lmz', 3),
-	(36, 'lyb', 3),
-	(35, 'mnj', 3),
-	(34, 'pmg', 3),
-	(24, 'slg', 3),
-	(46, 'smg', 3),
-	(47, 'srm', 3),
-	(48, 'alb', 4),
-	(49, 'brw', 4),
-	(50, 'cjj', 4),
-	(51, 'dxj', 4),
-	(52, 'jrk', 4),
-	(53, 'kag', 4),
-	(54, 'pmg', 4),
-	(55, 'alm', 5),
-	(56, 'cmb', 5),
-	(57, 'jpd', 5),
-	(58, 'lmn', 5),
-	(59, 'srm', 5),
-	(67, 'alb', 6),
-	(66, 'ale', 6),
-	(65, 'brw', 6),
-	(64, 'chs', 6),
-	(63, 'cjj', 6),
-	(62, 'dcj', 6),
-	(61, 'dgk', 6),
-	(60, 'djb', 6),
-	(79, 'dxj', 6),
-	(78, 'gas', 6),
-	(76, 'jpd', 6),
-	(75, 'jrk', 6),
-	(74, 'kag', 6),
-	(73, 'lmz', 6),
-	(72, 'lyb', 6),
-	(71, 'mnj', 6),
-	(70, 'pmg', 6),
-	(69, 'slg', 6),
-	(68, 'smg', 6),
-	(85, 'ale', 7),
-	(84, 'chs', 7),
-	(83, 'dcj', 7),
-	(82, 'dgk', 7),
-	(81, 'djb', 7),
-	(80, 'gas', 7),
-	(128, 'gaw', 7),
-	(129, 'jhm', 7),
-	(130, 'jms', 7),
-	(90, 'jpd', 7),
-	(89, 'lmz', 7),
-	(88, 'lyb', 7),
-	(87, 'slg', 7),
-	(86, 'smg', 7),
-	(97, 'ale', 8),
-	(96, 'chs', 8),
-	(95, 'dcj', 8),
-	(94, 'dgk', 8),
-	(93, 'djb', 8),
-	(92, 'gas', 8),
-	(103, 'jpd', 8),
-	(102, 'lmz', 8),
-	(101, 'lyb', 8),
-	(100, 'mnj', 8),
-	(99, 'slg', 8),
-	(98, 'smg', 8),
-	(110, 'ale', 9),
-	(109, 'alm', 9),
-	(132, 'cmb', 9),
-	(107, 'dcj', 9),
-	(106, 'dgk', 9),
-	(105, 'djb', 9),
-	(116, 'jpd', 9),
-	(115, 'lmn', 9),
-	(114, 'lyb', 9),
-	(113, 'slg', 9),
-	(112, 'smg', 9),
-	(111, 'srm', 9);
 
+        INSERT INTO group_assignments (user_id, group_id) VALUES (1, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (1, 4);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (1, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (2, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (2, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (2, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (2, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (2, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (2, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (3, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (3, 5);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (3, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (4, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (5, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (6, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (6, 4);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (6, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (7, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (8, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (8, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (8, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (8, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (9, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (9, 4);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (9, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (10, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (11, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (11, 5);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (11, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (12, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (12, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (12, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (12, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (12, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (13, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (13, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (13, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (13, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (13, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (14, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (14, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (14, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (14, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (14, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (14, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (15, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (16, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (17, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (17, 4);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (17, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (18, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (19, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (19, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (19, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (19, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (20, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (20, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (21, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (21, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (22, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (22, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (23, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (23, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (23, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (23, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (23, 5);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (23, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (23, 2);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (24, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (24, 4);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (24, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (25, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (25, 4);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (25, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (26, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (27, 2);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (28, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (28, 5);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (28, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (29, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (29, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (29, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (29, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (30, 2);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (30, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (31, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (32, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (32, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (32, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (32, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (32, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (32, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (33, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (34, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (35, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (35, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (35, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (36, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (37, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (37, 4);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (37, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (38, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (39, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (39, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (39, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (39, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (39, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (39, 1);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (40, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (40, 8);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (40, 7);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (40, 6);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (40, 3);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (41, 9);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (41, 5);
+        INSERT INTO group_assignments (user_id, group_id) VALUES (41, 3);
+
+	ALTER SEQUENCE group_assignments_id_seq RESTART WITH 125;
+	 
 	DROP TABLE IF EXISTS  users CASCADE;
 	CREATE TABLE IF NOT EXISTS  users (
-	   UserId varchar(20) NOT NULL,
-	   username char(20) DEFAULT NULL,
-	  PRIMARY KEY (UserId)
+	   user_id SERIAL PRIMARY KEY,
+           login char(20) NOT NULL,
+	   username char(20) DEFAULT NULL 
 	);
 
 	--
 	-- Dumping data for table  'users'
 	--
 
-	INSERT INTO  users ( UserId,  username) VALUES
-	('alb', 'April Jones'),
-	('ale', 'Angie Smith'),
-	('alm', 'Andrea Thompson'),
-	('ayb', 'Alissa Alpha'),
-	('blz', 'Brenda Beta'),
-	('brw', 'Billy Gamma'),
-	('cad', 'Cyndy Delta'),
-	('chs', 'Christina Epsilson'),
-	('cjj', 'Carol Japell'),
-	('clh', 'Carrie Hurley-Marker'),
-	('cmb', 'Cathy Becker'),
-	('dcj', 'Dawn Powell'),
-	('dgk', 'Dave Buster'),
-	('djb', 'Dave Blandingsworth'),
-	('djl', 'Debra Lawson'),
-	('dra', 'Dan Alpaca'),
-	('dxj', 'Drew Jewison'),
-	('eas', 'Liz Samuels'),
-	('gas', 'Gen Spaeth'),
-	('gaw', 'George Wolefenstein'),
-	('jhm', 'Jane Maryson'),
-	('jms', 'Janie Bettysborth'),
-	('jpd', 'Joel Deign'),
-	('jrk', 'John Kip'),
-	('kag', 'Kim Brassworkth'),
-	('kjc', 'Kathy Constantine'),
-	('lmb', 'Lisa Blossom'),
-	('lmn', 'Lana Nebbish'),
-	('lmz', 'Luann Zap'),
-	('lsb', 'Lucille Betson'),
-	('lxz', 'Lynn Ziglier'),
-	('lyb', 'Logan Boson'),
-	('mab', 'Marietta Ballon'),
-	('mkm', 'Mary Mattson'),
-	('mnj', 'Michelle Johnson'),
-	('oper', 'Olga PE Robeson'),
-	('pmg', 'Paula Ganymede'),
-	('sgrana', 'Sara Grandstand'),
-	('slg', 'Sam Garfnarf'),
-	('smg', 'Sue Glendale'),
-	('srm', 'Shannon Missouri');
+	INSERT INTO  users (user_id, login,  username) VALUES
+	(1,'alb', 'April Jones'),
+	(2,'ale', 'Angie Smith'),
+	(3,'alm', 'Andrea Thompson'),
+	(4,'ayb', 'Alissa Alpha'),
+	(5,'blz', 'Brenda Beta'),
+	(6,'brw', 'Billy Gamma'),
+	(7,'cad', 'Cyndy Delta'),
+	(8,'chs', 'Christina Epsilson'),
+	(9,'cjj', 'Carol Japell'),
+	(10,'clh', 'Carrie Hurley-Marker'),
+	(11,'cmb', 'Cathy Becker'),
+	(12,'dcj', 'Dawn Powell'),
+	(13,'dgk', 'Dave Buster'),
+	(14,'djb', 'Dave Blandingsworth'),
+	(15,'djl', 'Debra Lawson'),
+	(16,'dra', 'Dan Alpaca'),
+	(17,'dxj', 'Drew Jewison'),
+	(18,'eas', 'Liz Samuels'),
+	(19,'gas', 'Gen Spaeth'),
+	(20,'gaw', 'George Wolefenstein'),
+	(21,'jhm', 'Jane Maryson'),
+	(22,'jms', 'Janie Bettysborth'),
+	(23,'jpd', 'Joel Deign'),
+	(24,'jrk', 'John Kip'),
+	(25,'kag', 'Kim Brassworkth'),
+	(26,'kjc', 'Kathy Constantine'),
+	(27,'lmb', 'Lisa Blossom'),
+	(28,'lmn', 'Lana Nebbish'),
+	(29,'lmz', 'Luann Zap'),
+	(30,'lsb', 'Lucille Betson'),
+	(31,'lxz', 'Lynn Ziglier'),
+	(32,'lyb', 'Logan Boson'),
+	(33,'mab', 'Marietta Ballon'),
+	(34,'mkm', 'Mary Mattson'),
+	(35,'mnj', 'Michelle Johnson'),
+	(36,'oper', 'Olga PE Robeson'),
+	(37,'pmg', 'Paula Ganymede'),
+	(38,'sgrana', 'Sara Grandstand'),
+	(39,'slg', 'Sam Garfnarf'),
+	(40,'smg', 'Sue Glendale'),
+	(41,'srm', 'Shannon Missouri');
 
 
 	--
@@ -376,4 +377,4 @@ CREATE TABLE IF NOT EXISTS   application_groups  (
 	--
 	ALTER TABLE   group_assignments 
 	  ADD CONSTRAINT   group_assignments_ibfk_1  FOREIGN KEY ( group_id ) REFERENCES   groups  (  id ),
-	  ADD CONSTRAINT   group_assignments_ibfk_2  FOREIGN KEY ( user_id ) REFERENCES   users  (  UserId ); 
+	  ADD CONSTRAINT   group_assignments_ibfk_2  FOREIGN KEY ( user_id ) REFERENCES   users  ( user_id ); 
