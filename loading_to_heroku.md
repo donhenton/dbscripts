@@ -1,4 +1,4 @@
-To load to heroku
+To load to heroku from a local instance of postgres
 
 * have a clean db on heroku
 * locate resource name via the heroku interface eg (https://postgres.heroku.com/databases/donhenton-spring-boot-database)
