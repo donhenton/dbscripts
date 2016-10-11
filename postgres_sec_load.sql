@@ -364,7 +364,7 @@ CREATE TABLE IF NOT EXISTS   application_groups  (
 	(40,'smg', 'Sue Glendale'),
 	(41,'srm', 'Shannon Missouri');
 
-
+ALTER SEQUENCE users_user_id_seq RESTART WITH 60;
 	--
 	-- Constraints for table  'application_groups'
 	--
