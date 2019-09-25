@@ -6,7 +6,7 @@ Various database scripts used for demonstration programming
 
 Restoring the tar files is done in the following way:
 
-## Restore from tar files
+### Restore from tar files
 
 * create the database from the tar file name (northwind.tar -> 'northwind')
 * ```CREATE DATABASE dbname OWNER <rolename>;``` (used user 'test' in this case)
