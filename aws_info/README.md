@@ -35,3 +35,9 @@ psql --host=dhenton-postgres.csptohoxpe5z.us-east-2.rds.amazonaws.com /
 
 then read the text files
 run copy_data_2.sh on the ec2 machine see the comments in that file for more info
+
+
+## Loading to AWS via Dump File
+
+See https://github.com/donhenton/postgres-sandbox/tree/master/jdatabase_backup for an
+alternate method of loading the data to aws via a dump file for jdatabase
